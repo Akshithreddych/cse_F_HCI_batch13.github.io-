@@ -1,0 +1,247 @@
+<html>
+<head>
+    <style>
+        body,h1,form{
+            margin:0;
+            padding:0;
+        }
+        .container{
+            max-width:800px;
+            margin:0 auto;
+            padding:20px;
+            text-align:center;
+            background-color:#f0f0f0;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+        h1{
+            font-size:28px;
+            margin-bottom:20px;
+            color:#333;
+        }
+        form {
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+        label {
+            font-size:18px;
+            margin-bottom:10px;
+            color:#555;
+        }
+        select,input[type="submit"]{
+            padding:12px;
+            font-size:16px;
+            margin:10px 0;
+            border:1px solid #ccc;
+            border-radius:5px;
+            width:100%;
+            background-color:#f9f9f9;
+            color:#333;
+        }
+        input[type="submit"]{
+            background-color:#007BFF;
+            color:#fff;
+            cursor:pointer;
+            transition:background-color 0.3s ease-in-out;
+        }
+        input[type="submit"]:hover{
+            background-color:#0056b3;
+        }
+        #timetable{
+            margin-top:30px;
+            padding:20px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            text-align:left;
+            background-color:#fff;
+            box-shadow:0 0 5px rgba(0,0,0,0.2);
+        }
+        #timetable h2{
+            font-size:24px;
+            margin-bottom:20px;
+            color:#333;
+        }
+        #timetable p{
+            font-size:16px;
+            color:#555;
+        }
+  .blink{
+                animation:blinker 0.75s linear infinite;
+                color:blue;
+                font-family:sans-serif    
+            }
+            @keyframes blinker{
+                50% {
+                    opacity:0;
+                }
+            }
+    </style>
+</head>
+<body>
+<div class="im">
+<img class="img-rounded" src="https://sraap.in/student/h1.png" width="100%" align="center">
+</div>
+<marquee class="blink" direction="right" height="50px" behavior="scroll" scrollamount="9">
+NOTE:Select your Year-Branch-Section
+</marquee>
+    <div class="container">
+        <h1>ALL Year Timetables</h1>
+        <form id="timetable-form">
+            <label for="year">Select Year:</label>
+            <select id="year" name="year">
+                <option value="select">Select Year</option>
+                <option value="year1">1st Year</option>
+                <option value="year2">2nd Year</option>
+                <option value="year3">3rd Year</option>
+                <option value="year4">4th Year</option>
+            </select>
+            <label for="branch">Select Branch:</label>
+            <select id="branch" name="branch">
+                <option value="select">Select Branch</option>
+                <option value="CSE_AI">CSE & AI</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="MECH">MECH</option>
+                <option value="CIVIL">CIVIL</option>
+            </select>
+            <label for="section">Select Section:</label>
+            <select id="section" name="section">
+                <option value="select">Select Section</option>
+                <option value="CSE A">CSE A</option>
+                <option value="CSE B">CSE B</option>
+                <option value="CSE C">CSE C</option>
+                <option value="CSE D">CSE D</option>
+                <option value="CSE E">CSE E</option>
+                <option value="CSE F">CSE F</option>
+                <option value="CSE G">CSE G</option>
+                <option value="CSE H">CSE H</option>
+                <option value="CSE I">CSE I</option>
+                <option value="CSE J">CSE J</option>
+                <option value="CSE K">CSE K</option>
+                <option value="CSE L">CSE L</option>
+                <option value="CSE M">CSE M</option>
+                <option value="CSE N">CSE N</option>
+                <option value="CSE O">CSE O</option>
+                <option value="CSE-AIML-A">CSE-AIML-A</option>
+                <option value="CSE-AIML-B">CSE-AIML-B</option>
+                <option value="CSE-AIML-C">CSE-AIML-C</option>
+                <option value="CSE-AIML-D">CSE-AIML-D</option>
+                <option value="CSE-DSCS">CSE-DSCS</option>
+                </select>
+                <input type="submit" value="Show Timetable">
+            </form>
+            <div id="timetable">
+                <!-- Timetable content will be displayed here -->
+            </div>
+        </div>
+        <script>
+            const timetables ={
+                year1: {
+                    sectionA: "<h2>Timetable for 1st Year, Section A</h2><p></p>",
+                    sectionB: "<h2>Timetable for 1st Year, Section B</h2><p></p>",
+                    sectionC: "<h2>Timetable for 1st Year, Section C</h2><p></p>",
+                },
+                year2: {
+                    CSE_AI:{
+"CSE A": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section A</h2>
+                            <p>
+                              <a href="2CSE-A.html">CSE-A</a>
+                            </p>
+                        `,
+"CSE B": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section B</h2>
+                            <p>
+                                <a href="2CSE-B.html">CSE-B</a>
+                            </p>
+                        `,
+"CSE C": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section C</h2>
+                            <p><a href="2CSE-C.html">CSE-C</a></p>
+                        `,
+"CSE D": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section D</h2>
+                            <p><a href="2CSE-D.html">CSE-D</a></p>
+                        `,
+"CSE E": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section E</h2>
+                            <p><a href="2CSE-E.html">CSE-E</a></p>
+                        `,
+"CSE F": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section F</h2>
+                            <p><a href="2CSE-F.html">CSE-F</a></p>
+                        `,
+"CSE G": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section G</h2>
+                            <p><a href="2CSE-G.html">CSE-G</a></p>
+                        `,
+"CSE H": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section H</h2>
+                            <p><a href="2CSE-H.html">CSE-H</a></p>
+                        `,
+"CSE I": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section I</h2>
+                            <p><a href="2CSE-I.html">CSE-I</a></p>
+                        `,
+"CSE J": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section J</h2>
+                            <p><a href="2CSE-J.html">CSE-J</a></p>
+                        `,
+"CSE K": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section K</h2>
+                            <p><a href="2CSE-K.html">CSE-K</a></p>
+                        `,
+"CSE L": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section L</h2>
+                            <p><a href="2CSE-L.html">CSE-L</a></p>
+                        `,
+"CSE M": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section M</h2>
+                            <p><a href="2CSE-M.html">CSE-M</a></p>
+                        `,
+"CSE N": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section N</h2>
+                            <p><a href="2CSE-N.html">CSE-N</a></p>
+                        `,
+"CSE O": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section O</h2>
+                            <p><a href="2CSE-O.html">CSE-O</a></p>
+                        `,
+"CSE-AIML-A": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section CSE-AIML-A</h2>
+                            <p><a href="2CSE-AIML-A.html">CSE-AIML-A</a></p>
+                        `,
+"CSE-AIML-B": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section CSE-AIML-B</h2>
+                            <p><a href="2CSE-AIML-B.html">CSE-AIML-B</a></p>
+                        `,
+"CSE-AIML-C": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section CSE-AIML-C</h2>
+                            <p><a href="2CSE-AIML-C.html">CSE-AIML-C</a></p>
+                        `,
+"CSE-AIML-D": `
+                            <h2>Timetable for 2nd Year, CSE & AI, Section CSE-AIML-A</h2>
+                            <p><a href="2CSE-AIML-D.html">CSE-AIML-D</a></p>
+                        `,   
+                    },
+                    // Add timetables for other branches as needed
+                },
+                // Add timetables for other years as needed
+            };
+            document.getElementById('timetable-form').addEventListener('submit', function (e) {
+                e.preventDefault();
+                const year = document.getElementById('year').value;
+                const branch = document.getElementById('branch').value;
+                const section = document.getElementById('section').value;
+                // Check if the timetable data exists
+                if (timetables[year] && timetables[year][branch] && timetables[year][branch][section]) {
+                    const timetableContent = timetables[year][branch][section];
+                    document.getElementById('timetable').innerHTML = timetableContent;
+                } else {
+                    document.getElementById('timetable').innerHTML = "<p>Timetable data not available for the selected year, branch, and section.</p>";
+                }
+            });
+        </script> 
+    </body>
+</html>
